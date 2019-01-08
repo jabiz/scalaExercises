@@ -61,6 +61,6 @@ object Tusday extends App{
   }
 
   arrayTest.foreach(arrayNumber => arrayCheck(arrayNumber))
-
+//fake change
 }
 
