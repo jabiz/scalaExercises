@@ -1,4 +1,4 @@
-object tusday extends App{
+object Tusday extends App{
 
   val x = 99 to 0 by -1
 
@@ -6,7 +6,7 @@ object tusday extends App{
     val counter2 = counter-1
     s"""         |   $counter bottles of beer on the wall
                  |   $counter bottles of beer
-                 |  take one down and pass it around, $counter2 bottles of beer on the wall """
+                 |  take one down and pass it around, ${counter-1} bottles of beer on the wall """
   }
 
   x.foreach(bigint => if(bigint >= 1)(println(song(bigint)))else(print("No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, 99 bottles of beer on the wall")))
@@ -28,7 +28,7 @@ object tusday extends App{
                   |  take one down and pass it around, no more bottles of beer on the wall """)
       recursionSong(counter-1)
     }
-    else if(counter ==0)
+    else
     {
       println(s"""|   no more bottles of beer on the wall
                   |   no more bottles of beer
@@ -41,18 +41,26 @@ object tusday extends App{
   recursionSong(99)
 
 
-  var ArrayTest = Array.range(1, 1000000)
-  ArrayTest(345324)=23445
+ var arrayTest = Array.range(1, 1000000)
+  arrayTest(345324)=23445
+
+  var sortedArray = arrayTest.sorted
+  def arrayCheck2(size:Int):Unit={
+    for(i<- 0 until size-1){
+      if(sortedArray(i)==sortedArray(i+1))println(s"there is a duplicate of value ${sortedArray(i)}")
+    }
+  }
+  arrayCheck2(arrayTest.length)
+
 
   def arrayCheck(place:Int)={
-    for(i<- place until ArrayTest.length if i!= place){
-      if(ArrayTest(i)==ArrayTest(place))
+    for(i<- place until arrayTest.length if i!= place){
+      if(arrayTest(i)==arrayTest(place))
         println(s"$place")
     }
   }
 
-  ArrayTest.foreach(arrayNumber => arrayCheck(arrayNumber))
-
+  arrayTest.foreach(arrayNumber => arrayCheck(arrayNumber))
 
 }
 
