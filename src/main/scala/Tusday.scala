@@ -1,4 +1,4 @@
-object Tusday extends App{
+object Tusday {
 
   val x = 99 to 0 by -1
 
