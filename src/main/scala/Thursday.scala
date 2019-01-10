@@ -13,7 +13,7 @@ object Thursday extends App{
   var initialQuestion = readInt
   initialQuestion match {
     case 1 => {
-      var cCardNum = readLong.toString()
+      val cCardNum = readLong.toString()
       splitTheString(cCardNum)
       mathApllicableNum
       addingTheLists
@@ -22,38 +22,39 @@ object Thursday extends App{
     }
     case 2 => {
       println("please put in a random number and we will test its authenticity")
-      var cCardNum = readLong.toString()
+      val cCardNum = readLong.toString()
       val cCardNoneChangable = cCardNum
       splitTheString(cCardNum)
       mathApllicableNum
       addingTheLists
-      if (validCounter%10 == 0) print(s"$cCardNoneChangable is a valid card number omega good job")
+      if (validCounter%10 == 0) {
+        print(s"$cCardNoneChangable is a valid card number omega good job")
+      }
       else {
-        validCounter = 0
+        var validTesterTypeChange:String = ""
         var counter = 0
+
         while(validCounter%10 != 0)
           {
+            validCounter = 0
             cNumNonDub = scala.collection.mutable.ArrayBuffer[Int]()
             cNumDub = scala.collection.mutable.ArrayBuffer[Int]()
             cNumAfterMath =scala.collection.mutable.ArrayBuffer[Int]()
             counter += +1
-            var validTester = cCardNoneChangable.toLong + counter
-            var validTesterTypeChange = validTester.toString
-            println(validTesterTypeChange)
-            println(cCardNoneChangable)
-            validCounter = 10
-
+            val validTester = cCardNoneChangable.toLong + counter
+             validTesterTypeChange = validTester.toString
+            splitTheString(validTesterTypeChange)
+            mathApllicableNum
+            addingTheLists
+            //validCounter = 10
           }
+        println(s"we have made the rubish card number you put in a legit sucsses \n your new card number is $validTesterTypeChange")
       }
     }
     case _=>print("try reading the instructions")
 
   }
-  def cardCreater():String={
 
-
-    ""
-  }
   def splitTheString(cCardNum:String) {
     var i = 0
     while (i <= cCardNum.length() - 2) {
@@ -77,7 +78,7 @@ object Thursday extends App{
 
 // if (validCounter%10 == 0) print("valid card number omega good job")
  //else print("not valid card number, rip")
-
+//println("while condition " + (validCounter%10 != 0))
 
 
 }
