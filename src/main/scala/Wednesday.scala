@@ -1,6 +1,6 @@
 import scala.io.Source
 import scala.io.StdIn._
-object Wednesday extends App{
+object Wednesday  {
   val engLang = Source.fromFile("C:/Users/Admin/Desktop/scalaWork/EnglishLang.txt").getLines().toList
   print("please enter the amount of inputs wanted ")
   val amountWanted = readInt
@@ -9,8 +9,8 @@ object Wednesday extends App{
   for(iterator <- 0 until amountWanted)
     {
       amountEntered.append(readLine)
-    }
 
+    }
   var longestWord = ""
   def wordChecker(realWord:String,initalStringInput:String):Unit= {
     var realEdditer = realWord
