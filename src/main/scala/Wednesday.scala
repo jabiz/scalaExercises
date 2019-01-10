@@ -13,7 +13,6 @@ object Wednesday extends App{
 
   var longestWord = ""
   def wordChecker(realWord:String,initalStringInput:String):Unit= {
-    //var counter = engword.length
     var realEdditer = realWord
     for(i <- 1 to initalStringInput.length)
     {
@@ -41,10 +40,5 @@ object Wednesday extends App{
     println(s"the longest word for $inputName is $longestWord ")
     longestWord=""
   })
-//  {
-//
-//  }
 
-
-  //print(longestWord)
 }
