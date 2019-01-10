@@ -1,4 +1,4 @@
-object Tusday extends App{
+object Tusday {
 
   val x = 99 to 0 by -1
 
@@ -61,6 +61,6 @@ object Tusday extends App{
   }
 
   arrayTest.foreach(arrayNumber => arrayCheck(arrayNumber))
-
+//fake change
 }
 
