@@ -1,8 +1,6 @@
 import scala.io.StdIn._
 import scala.util.Random
 object Thursday extends App{
-  //println('5'.toInt)
-  // println("please enter you credit card number so that we can steal it")
 
   var cNumNonDub = scala.collection.mutable.ArrayBuffer[Int]()
   var cNumDub = scala.collection.mutable.ArrayBuffer[Int]()
@@ -14,39 +12,29 @@ object Thursday extends App{
   initialQuestion match {
     case 1 => {
       val cCardNum = readLong.toString()
-      splitTheString(cCardNum)
-      mathApllicableNum
-      addingTheLists
+      runThough(cCardNum)
       if (validCounter%10 == 0) print("valid card number omega good job")
       else print("not valid card number, rip")
     }
     case 2 => {
       println("please put in a random number and we will test its authenticity")
       val cCardNum = readLong.toString()
-      val cCardNoneChangable = cCardNum
-      splitTheString(cCardNum)
-      mathApllicableNum
-      addingTheLists
+      runThough(cCardNum)
       if (validCounter%10 == 0) {
-        print(s"$cCardNoneChangable is a valid card number omega good job")
+        print(s"$cCardNum is a valid card number omega good job")
       }
       else {
         var validTesterTypeChange:String = ""
         var counter = 0
-
         while(validCounter%10 != 0)
         {
           validCounter = 0
-          cNumNonDub = scala.collection.mutable.ArrayBuffer[Int]()
-          cNumDub = scala.collection.mutable.ArrayBuffer[Int]()
-          cNumAfterMath =scala.collection.mutable.ArrayBuffer[Int]()
           counter += +1
+          var cCardNoneChangable = cCardNum
+          resetTheArrays()
           val validTester = cCardNoneChangable.toLong + counter
           validTesterTypeChange = validTester.toString
-          splitTheString(validTesterTypeChange)
-          mathApllicableNum
-          addingTheLists
-          //validCounter = 10
+          runThough(validTesterTypeChange)
         }
         println(s"we have made the rubish card number you put in a legit sucsses \n your new card number is $validTesterTypeChange")
       }
@@ -54,7 +42,17 @@ object Thursday extends App{
     case _=>print("try reading the instructions")
 
   }
+def resetTheArrays(): Unit ={
+  cNumNonDub = scala.collection.mutable.ArrayBuffer[Int]()
+  cNumDub = scala.collection.mutable.ArrayBuffer[Int]()
+  cNumAfterMath =scala.collection.mutable.ArrayBuffer[Int]()
+}
 
+  def runThough (theStringLine: String): Unit ={
+    splitTheString(theStringLine)
+    mathApllicableNum
+    addingTheLists
+  }
   def splitTheString(cCardNum:String) {
     var i = 0
     while (i <= cCardNum.length() - 2) {
@@ -74,11 +72,6 @@ object Thursday extends App{
     cNumAfterMath.foreach(x => validCounter += x)
     cNumNonDub.foreach(x => validCounter += x)
   }
-
-
-  // if (validCounter%10 == 0) print("valid card number omega good job")
-  //else print("not valid card number, rip")
-  //println("while condition " + (validCounter%10 != 0))
 
 
 }
