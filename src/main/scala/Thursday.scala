@@ -1,6 +1,6 @@
 import scala.io.StdIn._
 import scala.util.Random
-object Thursday extends App{
+object Thursday {
   //println('5'.toInt)
   // println("please enter you credit card number so that we can steal it")
 
